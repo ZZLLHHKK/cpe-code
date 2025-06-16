@@ -15,7 +15,7 @@ int main() {
             cin >> num[i];
         sort(num, num + r);
         for (int j = 0; j < r; ++j)
-            ans += abs(num[j]- num[mid]);
+            ans += abs(num[j] - num[mid]);
         cout << ans << '\n';
     }   
 }
