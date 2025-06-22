@@ -3,7 +3,7 @@
 #include <iomanip>
 using namespace std;
 const double pi = acos(-1);
-//1 min = 6 degree
+//1 min = 1 / 60 degree
 void solve(double s, double ang) {
     double arc, ch;
     arc = sqrt((2 * s * s) - (2 * s * s * cos(ang * pi / 180)));
