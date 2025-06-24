@@ -15,22 +15,24 @@ int prime(int n) {
 }
 
 int main() {
-    string n, r;
+    string n, r, tmp;
 
     while (cin >> n) {
+        tmp = n;
         int p1 = prime(stoi(n)); //prime
-        copy(n.rbegin(), n.rend(), r.begin());
+        reverse(n.begin(), n.end());
+        r = n;
         int p2 = prime(stoi(r)); //emirp
 
         if (p1 == 1 && p2 == 1) {
-            if (n == r)
-                cout << n << " is prime.\n";
+            if (tmp == r)
+                cout << tmp << " is prime.\n";
             else 
-                cout << n << " is emirp.\n";
+                cout << tmp << " is emirp.\n";
         }
         else if (p1 == 0)
-            cout << n << " is not prime.\n";
+            cout << tmp << " is not prime.\n";
         else if (p1 == 1 && p2 == 0)
-            cout << n << " is prime.\n";
+            cout << tmp << " is prime.\n";
     }
 }
