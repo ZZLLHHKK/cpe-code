@@ -9,14 +9,12 @@ char b[101][101];
 void dfs(int i, int j) {
     if (i < 0 || j < 0 || i >= r || j >= c || b[i][j] == '*' || vis[i][j] == 1) return;
     vis[i][j] = 1;
-    dfs(i - 1, j - 1); //左上
-    dfs(i - 1, j); //上
-    dfs(i - 1, j + 1); //右上
-    dfs(i, j - 1); //左
-    dfs(i, j + 1); //右
-    dfs(i + 1, j - 1); //左下
-    dfs(i + 1, j); //下
-    dfs(i + 1, j + 1); //右下
+    for (int a = -1; a <= 1; ++a) {
+        for (int b = -1; b <= 1; ++b) {
+            if (a == 0 && b == 0) continue;
+            dfs(i - a, j - b);
+        }
+    }
 }
 
 int main() {
